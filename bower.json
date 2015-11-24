@@ -1,0 +1,23 @@
+{
+  "name": "Protozoan",
+  "authors": [
+    "Martin DEQUATREMARE <m.dequa@gmail.com>"
+  ],
+  "description": "Minimalist UI framework",
+  "main": "dist/protozoan.js",
+  "moduleType": [],
+  "keywords": [
+    "minimal",
+    "ui",
+    "framework"
+  ],
+  "license": "MIT",
+  "homepage": "http://martin-dequatremare.fr",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

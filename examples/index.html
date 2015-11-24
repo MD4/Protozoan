@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Protozoan examples</title>
+    <script src="../dist/protozoan.js"></script>
+    <script>
+        var c;
+        function main() {
+
+            var t1 = {
+                vars: {
+                    buddy: ''
+                },
+                body: [
+                    'lol',
+                    function (buddy) {
+                        return 'hey ' + buddy
+                    }
+                ]
+            };
+
+            var t2 = {
+                vars: {
+                    buddy: 'Martin',
+                    loul: 1
+                },
+                body: [
+                    [
+                        'lol',
+                        {
+                            tag: 'a',
+                            content: function (buddy) {
+                                this.loul++;
+                                return 'Hi ' + buddy + '! ';
+                            },
+                            attributes: function (loul) {
+                                return {
+                                    href: '#' + loul
+                                };
+                            }
+                        },
+                        {
+                            tag: 'input',
+                            attributes: function(loul) {
+                                return {
+                                    type: 'text',
+                                    value: loul
+                                };
+                            }
+                        },
+                        new Protozoan.Component(t1)
+                    ]
+                ]
+            };
+
+            c = new Protozoan.Component(
+                    t2,
+                    document.querySelector('body')
+            );
+
+        }
+
+        document.onclick = function change() {
+            c.vars.buddy = 'Bato';
+        };
+
+    </script>
+</head>
+<body onload="main()">
+</body>
+</html>
