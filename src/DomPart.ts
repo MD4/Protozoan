@@ -3,7 +3,6 @@ import {FunctionUtils} from "./utils/FunctionUtils";
 
 export class DomPart {
     private content:any = null;
-    private html:string = '';
     private varsScope:any;
     private $element:any;
     private $parent:any;
@@ -86,9 +85,7 @@ export class DomPart {
     }
 
     public render(args:Array<any>):void {
-        console.log('render', args);
         if ((typeof this.content) === 'function') {
-            console.log(1, this.varsScope);
             this.$element.innerHTML = this.content.apply(this.varsScope, args);
         }
     }
